@@ -6,7 +6,6 @@ Forum RP to aplikacja webowa stworzona w ASP.NET Core, umożliwiająca użytkown
 
 - .NET 8.0+
 - SQL Server (np. LocalDB)
-- Node.js (jeśli używane są zasoby frontendowe)
 
 ## Instalacja i uruchomienie
 
@@ -42,4 +41,3 @@ Forum RP to aplikacja webowa stworzona w ASP.NET Core, umożliwiająca użytkown
 - **ASP.NET Core** - Backend aplikacji.
 - **Entity Framework Core** - ORM do obsługi bazy danych.
 - **SQL Server** - Przechowywanie danych.
-- **Bootstrap/Tailwind (jeśli używane)** - Stylowanie UI.
