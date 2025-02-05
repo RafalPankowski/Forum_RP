@@ -1,0 +1,34 @@
+﻿@model Forum_RP.Models.User
+
+@{
+    ViewData["Title"] = "Logowanie";
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<form asp-action="Login" method="post">
+    <div class="form-horizontal">
+        <h4>Zaloguj</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label for="username" class="control-label">Nazwa</label>
+            <input type="text" name="username" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="control-label">Hasło</label>
+            <input type="password" name="password" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+﻿@model Forum_RP.Models.Post
+
+@{
+    ViewData["Title"] = "Edit Post";
+}
+
+<h2>Edytuj Komentarz</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="TopicId" />
+            <div class="form-group">
+                <label asp-for="PostContent" class="control-label">Zawartość</label>
+                <textarea asp-for="PostContent" class="form-control"></textarea>
+                <span asp-validation-for="PostContent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Details" asp-controller="Topic" asp-route-id="@Model.TopicId" class="btn btn-secondary">Wróć</a>
+</div>

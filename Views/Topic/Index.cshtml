@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Forum_RP.Models.Topic>
+@{
+    ViewData["Title"] = "Topics";
+}
+
+<h2>Tematy</h2>
+
+@if (ViewBag.CurrentUser != null)
+{
+    <p>
+        <a href="@Url.Action("Create", "Topic")" class="btn btn-primary mb-3">Nowy Temat</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Użytkownik</th>
+            <th>Data</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TopicTitle)</td>
+                <td>@Html.DisplayFor(modelItem => item.User)</td>
+                <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                <td>
+                    <a href="@Url.Action("Details", "Topic", new { id = item.Id })" class="btn btn-info">Rozwiń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

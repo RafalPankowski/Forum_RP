@@ -1,0 +1,11 @@
+﻿@model Post
+
+<form asp-controller="Forum" asp-action="Post" method="post">
+    <input type="hidden" asp-for="TopicId" />
+    <div>
+        <label asp-for="PostContent"></label>
+        <textarea asp-for="PostContent"></textarea>
+        <span asp-validation-for="PostContent"></span>
+    </div>
+    <button type="submit">Dodaj komentarz</button>
+</form>

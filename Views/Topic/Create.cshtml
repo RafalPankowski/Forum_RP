@@ -1,0 +1,25 @@
+﻿@model Topic
+
+@{
+    ViewData["Title"] = "Create Topic";
+}
+
+<h2>Nowy Temat</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CreateTopic" method="post">
+            <div class="form-group">
+                <label asp-for="TopicTitle" class="control-label">Nazwa Tematu</label>
+                <input asp-for="TopicTitle" class="form-control" />
+                <span asp-validation-for="TopicTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Wróć</a>
+</div>
